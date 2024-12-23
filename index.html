@@ -1,18 +1,19 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered H1</title>
+    <title>الحكومة السورية الإلكترونية (مبادرة)</title>
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
     <style>
         body {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes up the full viewport height */
             margin: 0;
             font-family: 'Readex Pro', sans-serif;
             background-color: #128769;
@@ -21,10 +22,71 @@
         h1 {
             text-align: center;
             font-size: 2.5em;
+            margin: 0;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+        .social-links a {
+            text-decoration: none;
+            font-size: 2em;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #0a574c;
+        }
+        img {
+            max-width: 90%; /* Ensures the image scales to fit within the viewport */
+            height: auto;  /* Maintains the image aspect ratio */
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ffffff; 
+            color: #128769; 
+            margin-bottom: 30px;
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 1.5em; 
+            font-family: 'Readex Pro';
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0a574c;
+            color: #ffffff;
+        }
+
+        /* Media Queries for Responsive Font Sizes */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em; /* Smaller font size for mobile */
+            }
+            button {
+                font-size: 1em; /* Smaller button font size for mobile */
+                padding: 8px 16px;
+            }
         }
     </style>
 </head>
 <body>
     <h1>الحكومة السورية الإلكترونية (مبادرة)</h1>
+    <div class="social-links">
+        <!-- X (Twitter) Link -->
+        <a href="https://x.com/syrian_e_gov" target="_blank" aria-label="X Profile">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <!-- Instagram Link -->
+        <a href="https://instagram.com/syrian_e_gov" target="_blank" aria-label="Instagram Profile">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+    <img src="./imgs/white-paper.png" alt="Syrian Government" />
+    <button>شارك بالمبادرة</button>
 </body>
 </html>
