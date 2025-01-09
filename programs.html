@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحكومة السورية الإلكترونية (مبادرة)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            /* Ensure the body takes up the full viewport height */
+            margin: 0;
+            font-family: 'Readex Pro', sans-serif;
+            background-color: #128769;
+            color: #ffffff;
+            padding-top: 60px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 0;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            font-size: 2em;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #0a574c;
+        }
+
+        img {
+            max-width: 90%;
+            /* Ensures the image scales to fit within the viewport */
+            height: auto;
+            /* Maintains the image aspect ratio */
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ffffff;
+            color: #128769;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.5em;
+            font-family: 'Readex Pro';
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0a574c;
+            color: #ffffff;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            width: 100%;
+            background-color: #0a574c;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+
+        }
+
+        .navbar .logo {
+            color: #ffffff;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+            margin-right: 20px;
+
+        }
+
+        .navbar-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 8px 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            background-color: #ffffff;
+            color: #0a574c;
+            border-radius: 5px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin-right: 20px
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                background-color: #0a574c;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .navbar-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Media Queries for Responsive Font Sizes */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+                /* Smaller font size for mobile */
+            }
+
+            button {
+                font-size: 1em;
+                /* Smaller button font size for mobile */
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<script>
+    function toggleNavbar() {
+        const links = document.querySelector('.navbar-links');
+        links.classList.toggle('active');
+    }
+</script>
+
+<body>
+    <div class="navbar">
+
+        <div class="navbar-links">
+            <a href="#join">◀︎ شارك</a>
+            <a href="#about">الورقة البيضاء</a>
+            <a href="#contact">البرامج</a>
+        </div>
+        <div class="hamburger" onclick="toggleNavbar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <h1>الحكومة السورية الإلكترونية (مبادرة)</h1>
+    <div class="social-links">
+        <!-- X (Twitter) Link -->
+        <a href="https://x.com/syrian_e_gov" target="_blank" aria-label="X Profile">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <!-- Instagram Link -->
+        <a href="https://instagram.com/syrian_e_gov" target="_blank" aria-label="Instagram Profile">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+    <button onclick="window.open('https://join.egov-syria.com/', '_blank')">◀︎ شارك بالمبادرة</button>
+
+    <img src="./imgs/white-paper.png" alt="Syrian Government" />
+</body>
+
+</html>

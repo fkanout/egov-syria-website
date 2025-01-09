@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,81 +14,347 @@
             justify-content: flex-start;
             align-items: center;
             flex-direction: column;
-            min-height: 100vh; /* Ensure the body takes up the full viewport height */
+            min-height: 100vh;
             margin: 0;
             font-family: 'Readex Pro', sans-serif;
             background-color: #128769;
             color: #ffffff;
+            padding-top: 60px;
+
         }
+
         h1 {
             text-align: center;
-            font-size: 2.5em;
+            font-size: 1.8em;
             margin: 0;
             padding-bottom: 20px;
             padding-top: 20px;
         }
+
         .social-links {
             display: flex;
             gap: 20px;
             justify-content: center;
             padding-bottom: 20px;
+            margin-top: 2em;
         }
+
         .social-links a {
             text-decoration: none;
-            font-size: 2em;
+            font-size: 3em;
             color: #ffffff;
             transition: color 0.3s ease;
         }
+
         .social-links a:hover {
             color: #0a574c;
         }
+
         img {
-            max-width: 90%; /* Ensures the image scales to fit within the viewport */
-            height: auto;  /* Maintains the image aspect ratio */
-            margin-bottom: 20px;
+            max-width: 90%;
+            height: auto;
         }
+
         button {
-            background-color: #ffffff; 
-            color: #128769; 
+            background-color: #ffffff;
+            color: #128769;
             margin-bottom: 30px;
-            padding: 10px 20px; 
-            border: none; 
-            border-radius: 5px; 
-            font-size: 1.5em; 
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
             font-family: 'Readex Pro';
             cursor: pointer;
+            width: 100%;
         }
+
         button:hover {
             background-color: #0a574c;
             color: #ffffff;
         }
 
-        /* Media Queries for Responsive Font Sizes */
-        @media (max-width: 768px) {
+        .navbar {
+            width: 100%;
+            background-color: #0a574c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            margin-bottom: 100px;
+        }
+
+        .navbar .logo {
+            color: #ffffff;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px;
+            margin-right: 20px;
+        }
+
+        .navbar-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 8px 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            background-color: #ffffff;
+            color: #0a574c;
+            border-radius: 5px;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+        }
+
+        .navbar .logo-container {
+            display: flex;
+            padding-left: 20px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-right: auto;
+        }
+
+        .navbar .logo-container img {
+            width: 220px;
+        }
+
+        .navbar .logo-container span {
+            color: #ffffff;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /* Mobile-first layout for smaller screens */
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: right;
+            justify-content: center;
+            margin-top: 200px;
+            margin-left: 20px;
+            margin-right: 20px;
+            max-width: 80%;
+        }
+
+        p {
+            text-align: justify;
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .vectors {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .box {
+            background-color: #0a574c;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.6em;
+            font-family: 'Readex Pro', sans-serif;
+            width: 100%;
+            text-align: center;
+            flex: 4;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Add ellipsis if the text is too long */
+
+        }
+
+        hr {
+            border: 1px solid #ffffff27;
+            width: 80%;
+            margin: 20px 0;
+        }
+
+        /* Media queries for larger devices */
+        @media (min-width: 768px) {
             h1 {
-                font-size: 1.8em; /* Smaller font size for mobile */
+                font-size: 2.5em;
             }
+
+            .navbar-links {
+                display: flex;
+                gap: 20px;
+            }
+
+            .vectors {
+                flex-direction: row;
+                gap: 7em;
+                justify-content: center;
+            }
+
+            .box {
+                width: 300px;
+                font-size: 1.4em;
+            }
+
             button {
-                font-size: 1em; /* Smaller button font size for mobile */
-                padding: 8px 16px;
+                font-size: 1.5em;
+                padding: 10px 20px;
             }
+
+            .social-links {
+                gap: 20px;
+            }
+
+            .hamburger {
+                display: none;
+                /* Make it visible on mobile */
+            }
+        }
+
+        /* Show hamburger only on smaller screens */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                /* Make it visible on mobile */
+                margin-right: 2em;
+                font-size: xx-large;
+            }
+
+            /* Hide the navbar links by default on mobile */
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                background-color: #0a574c;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                padding: 10px;
+                border-radius: 5px;
+                width: 80%;
+            }
+
+            /* Show navbar links when active class is added */
+            .navbar-links.active {
+                display: flex;
+            }
+
+            .main {
+                max-width: 70%;
+            }
+
         }
     </style>
 </head>
+
+<script>
+    function toggleNavbar() {
+        const links = document.querySelector('.navbar-links');
+        links.classList.toggle('active');
+    }
+    document.addEventListener('click', function (event) {
+        const navbar = document.querySelector('.navbar');
+        const links = document.querySelector('.navbar-links');
+
+        // Check if the click was outside the navbar or the navbar links
+        if (!navbar.contains(event.target) && links.classList.contains('active')) {
+            links.classList.remove('active');
+        }
+    });
+</script>
+
 <body>
-    <h1>الحكومة السورية الإلكترونية (مبادرة)</h1>
-    <div class="social-links">
-        <!-- X (Twitter) Link -->
-        <a href="https://x.com/syrian_e_gov" target="_blank" aria-label="X Profile">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <!-- Instagram Link -->
-        <a href="https://instagram.com/syrian_e_gov" target="_blank" aria-label="Instagram Profile">
-            <i class="fab fa-instagram"></i>
-        </a>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="/imgs/no-bg-logo.png" alt="Logo" width="200px">
+        </div>
+        <div class="navbar-links">
+            <a href="https://join.egov-syria.com/">◀︎ شارك</a>
+            <a href="/white-paper.html">الورقة البيضاء</a>
+            <a href="#programs">البرامج ( قيد التحضير )</a>
+            <a href="#structure">الهيكلية ( قيد التحضير )</a>
+        </div>
+        <div class="hamburger" onclick="toggleNavbar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-    <button onclick="window.open('https://join.egov-syria.com/', '_blank')">◀︎ شارك بالمبادرة</button>
-    
-    <img src="./imgs/white-paper.png" alt="Syrian Government" />
+
+    <div dir="rtl" class="main">
+        <h1>مبادرة الحكومة السورية الإلكترونية: توحيد الجهود للنهوض بسوريا الجديدة</h1>
+        <p>بعد تحرير سوريا من نظام الأسد، تواجه البلاد تحديات هائلة في إعادة البناء وتأسيس نظام حكومي متكامل يلبي تطلعات
+            الشعب السوري. من هذا المنطلق، انطلقت مبادرة "الحكومة السورية الإلكترونية" كجهد جماعي يهدف إلى جمع وتوحيد
+            خبرات السوريين التقنية من مختلف أنحاء العالم، للمساهمة في دعم الجهود الوطنية خلال المرحلة الانتقالية والعمل
+            على بناء مستقبل رقمي متقدم لسوريا
+        </p>
+        <p>
+            مبادرة الحكومة السورية الإلكترونية تركز على ثلاثة محاور أساسية، تمثل الركيزة لتحقيق المرحلة الحالية وتلبية
+            احتياجاتها:
+        </p>
+        <div class="vectors">
+            <div class="box">الأمن و الأمان</div>
+            <div class="box">الإحصاء و التوثيق</div>
+            <div class="box">الخدمات</div>
+        </div>
+        <p>
+            تحت كل من هذه المحاور، يتنوع ويُطرح عدد من البرامج
+            التي تهدف إلى بناء مستقبل مؤسساتي الكتروني آمن للبلاد.
+        </p>
+
+        <hr>
+        <h2> ⏳ المرحلة الأولى: دراسة الوضع الحالي ووضع خطة استراتيجية للتحول الرقمي</h2>
+        <p>
+            نحن الآن في المرحلة الأولى من مبادرة الحكومة الإلكترونية، والتي تهدف إلى فهم الوضع الحالي للخدمات والبنية
+            التحتية المتاحة، وتحديد نقاط القوة والضعف والتحديات التي تواجه التحول الرقمي في سوريا.
+        </p>
+
+
+        <div>
+            <h3> الخطوات التنفيذية:</h3>
+            <p>1. دعوة الأفراد والمنظمات المهتمة للمشاركة في تطوير الحكومة الإلكترونية.</p>
+            <p>2. تشكيل فريق عمل وتحديد الهيكل التنظيمي للمشروع.</p>
+            <p>3. تحليل الوضع الحالي وتحديد البرامج ذات الأولوية بناءً على الاحتياجات الملحة.</p>
+            <p>4. التواصل مع الحكومة المؤقتة لتنسيق تنفيذ البرامج
+                والموارد اللازمة.</p>
+        </div>
+        <h3> الوقت المتوقع لانتهاء تنفيذ المرحلة الأولى: 15/03/2025</h3>
+
+
+
+
+        <div class="social-links">
+            <a href="https://x.com/syrian_e_gov" target="_blank" aria-label="X Profile">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com/syrian_e_gov" target="_blank" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <button onclick="window.open('https://join.egov-syria.com/', '_blank')">◀︎ شارك بالمبادرة</button>
+    </div>
 </body>
+
 </html>
